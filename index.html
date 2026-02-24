@@ -968,7 +968,6 @@
                 font-size: 2.5rem;
             }
         }
-        
         /* Телефоны (до 768px) */
 @media (max-width: 768px) {
     .container {
@@ -1014,15 +1013,29 @@
         font-size: 0.8rem;
     }
     
-    /* ===== ИЗМЕНЕНО: теперь 2 колонки на телефоне ===== */
+    /* ===== КАРТОЧКИ ПОРТФОЛИО (НА ГЛАВНОЙ) - 1 КОЛОНКА ===== */
     .grid {
-        grid-template-columns: repeat(2, 1fr);  /* Было 1fr, стало 2 колонки */
-        gap: 15px;  /* Уменьшил отступ для компактности */
+        grid-template-columns: 1fr;  /* Одна колонка для карточек категорий */
+        gap: 20px;
     }
     
     .grid .card:nth-child(4),
     .grid .card:nth-child(5) {
         transform: translateX(0);
+    }
+    
+    /* ===== СЕТКА ФОТО ВНУТРИ КАЖДОЙ КАРТОЧКИ - 2 КОЛОНКИ ===== */
+    .modal-grid {
+        grid-template-columns: repeat(2, 1fr);  /* Две колонки для фото */
+        gap: 10px;
+    }
+    
+    .modal-grid img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;  /* Пропорции 3:4 */
+        object-fit: cover;
+        border-radius: 6px;
     }
     
     .section-title {
@@ -1038,8 +1051,7 @@
     }
     
     .card-overlay h3 {
-        font-size: 1rem;  /* Немного уменьшил текст на карточках */
-        padding: 15px 10px 10px;
+        font-size: 1.1rem;
     }
     
     .pricing-grid {
@@ -1140,16 +1152,6 @@
         font-size: 0.95rem;
     }
     
-    /* Сетка в модальном окне */
-    .modal-grid {
-        grid-template-columns: repeat(2, 1fr);  /* В модалке тоже 2 колонки */
-        gap: 10px;
-    }
-    
-    .modal-grid img {
-        height: 150px;  /* Поменьше, чтобы влезали */
-    }
-    
     .carousel-image-container {
         padding: 50px 15px;
     }
@@ -1211,20 +1213,19 @@
     }
     
     .grid {
-        gap: 10px;  /* Еще меньше отступы */
+        gap: 15px;
     }
     
     .card-overlay h3 {
-        font-size: 0.9rem;  /* Еще меньше текст */
+        font-size: 1rem;
     }
     
     .modal-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
     
     .modal-grid img {
-        height: 120px;
+        aspect-ratio: 3 / 4;
     }
     
     .about-image img {
